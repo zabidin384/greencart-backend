@@ -21,7 +21,7 @@ await connectDB();
 await connectCloudinary();
 
 // Allow multiple origins
-const allowedOrigins = process.env.CLIENT_URL;
+const allowedOrigins = [process.env.CLIENT_URL];
 
 app.post("/stripe", express.raw({ type: "application/json" }), stripeWebhooks);
 
